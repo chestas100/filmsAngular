@@ -15,6 +15,9 @@ export class MoviewItemComponent implements OnInit {
     setTimeout(() => {
       this.newInput.setValue('new value here');
     }, 2000);
+    this.newInput.valueChanges.subscribe(data => {
+      console.log(data);
+    });
   }
 
 }
