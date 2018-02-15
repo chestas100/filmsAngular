@@ -1,5 +1,5 @@
-<div >
+<form [formGroup]="movieItemForm">
   <h1>{{movie.title}}</h1>
   <span>{{movie.year}}</span>
-  <input type="text" [formControl]="newInput">
-</div>
+  <input type="text" formControlName="newInput">
+</form>
