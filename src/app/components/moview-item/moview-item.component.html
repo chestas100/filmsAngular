@@ -1,5 +1,9 @@
-<form [formGroup]="movieItemForm">
-  <h1>{{movie.title}}</h1>
-  <span>{{movie.year}}</span>
-  <input type="text" formControlName="newInput">
+<div *ngIf="!editMode">
+  <h1>{{title}}</h1>
+  <span>{{edited | date}}</span>
+</div>
+<form [formGroup]="movieItemForm" *ngIf="editMode">
+  <input type="text" formControlName="title">  
+  <input type="text" formControlName="edited">
 </form>
+<button (click)="editMode = !editMode">{{editMode ? 'save' : 'edit movie'}}</button>

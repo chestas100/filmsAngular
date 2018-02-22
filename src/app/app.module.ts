@@ -5,6 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MoviewListComponent } from './components/moview-list/moview-list.component';
 import { MoviewItemComponent } from './components/moview-item/moview-item.component';
+import { MovieService } from './services/movie.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,8 +18,11 @@ import { MoviewItemComponent } from './components/moview-item/moview-item.compon
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    MovieService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
