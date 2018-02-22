@@ -1,5 +1,5 @@
 <div *ngIf="!editMode">
-  <h1>{{title}}</h1>
+  <h1 [routerLink]="['/movie', movie.episode_id]">{{title}}</h1>
   <span>{{edited | date}}</span>
 </div>
 <form [formGroup]="movieItemForm" *ngIf="editMode">

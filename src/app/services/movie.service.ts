@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+const baseUrl = 'https://swapi.co/api';
 @Injectable()
 export class MovieService {
   movies: any;
@@ -9,6 +9,10 @@ export class MovieService {
   ) { }
 
   getMovies() {
-    return this.http.get('https://swapi.co/api/films/', { observe: 'events' });
+    return this.http.get(`${baseUrl}/films/`, { observe: 'events' });
+  }
+
+  getMovieById(id) {
+    return this.http.get(`${baseUrl}/films/${id}`);
   }
 }
